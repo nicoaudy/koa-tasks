@@ -1,8 +1,8 @@
 import * as Koa from 'koa';
 import * as Router from 'koa-router';
 import logger = require('koa-logger');
-import taskRouter from './routes/tasks';
 import bodyparser = require('koa-bodyparser');
+import taskRouter from './routes/tasks';
 
 const app = new Koa();
 const router = new Router();
