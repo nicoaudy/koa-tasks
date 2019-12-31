@@ -2,7 +2,7 @@ import * as Koa from 'koa';
 import * as Router from 'koa-router';
 import logger = require('koa-logger');
 import taskRouter from './routes/tasks';
-import bodyparser from 'bodyparser';
+import bodyparser = require('koa-bodyparser');
 
 const app = new Koa();
 const router = new Router();
