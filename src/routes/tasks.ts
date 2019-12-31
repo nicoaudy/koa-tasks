@@ -34,13 +34,26 @@ router.post('/tasks', async(ctx) => {
 });
 
 router.put('/tasks/:id', async(ctx) => {
-	const param = ctx.params.id;
-	ctx.body = "Update tasks with id " + param;
+	const task = <Task>ctx.request.body;
+	const updateTask = await service.updateTask(Number(ctx.params.id), task);
+
+	if(updateTask) {
+		ctx.status = 200;
+		ctx.body = updateTask;
+	} else {
+		ctx.throw(404);
+	}
 });
 
 router.delete('/tasks/:id', async(ctx) => {
-	const param = ctx.params.id;
-	ctx.body = "Delete tasks with id " + param;
+	const deleteTask = await service.deleteTask(Number(ctx.params.id));
+
+	if(deleteTask) {
+		ctx.status = 200;
+		ctx.body = deleteTask;
+	} else {
+		ctx.throw(404);
+	}
 });
 
 export default router;
