@@ -10,5 +10,9 @@
     "Koa"
   ],
   "author": "NicoAudy",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "koa": "^2.11.0",
+    "koa-router": "^7.4.0"
+  }
 }
