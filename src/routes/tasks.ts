@@ -24,3 +24,5 @@ router.delete('/tasks/:id', async(ctx) => {
 	const param = ctx.params.id;
 	ctx.body = "Delete tasks with id " + param;
 });
+
+export default router;

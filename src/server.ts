@@ -1,7 +1,7 @@
 import * as Koa from 'koa';
 import * as Router from 'koa-router';
-
 import logger = require('koa-logger');
+import taskRouter from './routes/tasks';
 
 const app = new Koa();
 const router = new Router();
@@ -13,6 +13,7 @@ router.get('/', async(ctx) => {
 })
 
 app.use(router.routes());
+app.use(taskRouter.routes());
 
 app.listen(3000);
 console.log('Koa server is up and listening on port 3000');
