@@ -2,11 +2,13 @@ import * as Koa from 'koa';
 import * as Router from 'koa-router';
 import logger = require('koa-logger');
 import taskRouter from './routes/tasks';
+import bodyparser from 'bodyparser';
 
 const app = new Koa();
 const router = new Router();
 
 app.use(logger());
+app.use(bodyparser());
 
 router.get('/', async(ctx) => {
 	ctx.body = "First Koa response"
