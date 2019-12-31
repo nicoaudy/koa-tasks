@@ -8,6 +8,11 @@ const router = new Router();
 
 app.use(logger());
 
-app.listen(3000);
+router.get('/', async(ctx) => {
+	ctx.body = "First Koa response"
+})
 
+app.use(router.routes());
+
+app.listen(3000);
 console.log('Koa server is up and listening on port 3000');
